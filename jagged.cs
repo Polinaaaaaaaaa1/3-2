@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp16
+namespace задание_3_2_наследование_
+
 {public sealed class jagged : Array
     {
         public int[][] arrayyy;
