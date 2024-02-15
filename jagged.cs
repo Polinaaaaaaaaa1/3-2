@@ -5,24 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace задание_3_2_наследование_
-
-{public sealed class jagged : Array
+{
+    public sealed class jagged : Array
     {
         public int[][] arrayyy;
-        public jagged(int[][] arrayyy)
-        {
-            this.arrayyy = arrayyy;
+        public int heigth;
+        public jagged(int heigth)
+        {this.heigth = heigth;  
+            arrayyy = new int[heigth][];
         }
         public override void initialization()
         {
-            Console.WriteLine("Введите ступенчатый массив");
             for (int i = 1; i <= arrayyy.GetLength(0); i++)
             {
-
-                Console.WriteLine("Введите " + i + " строку массива");
-                Console.WriteLine("введите количество элементов");
+                Console.WriteLine($"введите количество элементов в {i} строке зубчатого массива"); 
 
                 int[] mas = new int[(int.Parse(Console.ReadLine()))];
+                Console.WriteLine("Введите " + i + " строку зубчатого массива");
                 mas = Console.ReadLine().Split(' ').Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => int.Parse(x)).ToArray();
 
                 arrayyy[(i - 1)] = mas;
@@ -30,7 +29,7 @@ namespace задание_3_2_наследование_
             }
         }
 
-        public override void average_and_print()
+        public override void average()
         {
             int amount = 0;
             int sum = 0;
@@ -47,7 +46,17 @@ namespace задание_3_2_наследование_
             }
             Console.WriteLine($"среднее в зубчатом массиве {sum / amount}");
         }
+        public override void print()
+        {
+            Console.WriteLine("зубчатый массив");
+            for (int i = 0; i < arrayyy.GetLength(0); i++)
+            {
+                Console.WriteLine(String.Join(" ", arrayyy[i]));
+
+                
+            }
+        }
     }
-}
+
 
 }
