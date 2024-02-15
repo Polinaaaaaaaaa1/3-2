@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace задание_3_2_наследование_
 {
-    abstract public class Array
-    {
-        public int[] array { get; set; }
-        public abstract void initialization();
-        public abstract void average_and_print();
+    
+        abstract public class Array
+        {
+            protected int[] array { get; set; }
+            public abstract void initialization();
+            public abstract void average();
+            public abstract void print();
+        
+          
 
-    }
+        }
+}
 
    
 
